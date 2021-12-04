@@ -1,0 +1,402 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}*/
+
+ :root{
+  --wine-red: #c4151c;
+  --orange: #fa4a0c;
+  --lytgrey: #5e5757;
+
+
+  --bigtxt: 3.5em;
+  --mdtxt: 2.1em;
+
+
+  --poppins: poppins, 'microsoft sans serif regular', 'sans-serif';
+  --brush: "Brush script mt", cursive;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+/*************************
+* all-in-one
+**************************/
+.categories h1, .new-dishes h1, .cat h3, .dish h3{
+  font-family: var(--poppins);
+}
+
+.txt1, .txt2, .txt2 a{
+  font-family: var(--brush);
+}
+
+.dish, .cat{
+  border-radius: 10px;
+}
+
+/* text-color: wine red */
+.nav-items a:hover, .chef-txt a:hover, .more a:hover, .kit-more a, .price{
+  color: var(--wine-red);
+}
+
+/* .categories h1, .new-dishes h1{
+  font-size: var(--mdtxt);
+} */
+
+.categories, .new-dishes, .kitchen{
+  margin-top: 55px;
+  /* padding: 10px; */
+}
+
+.dish-container, .kit-container{
+  padding: 20px 0;
+}
+
+.cat .content, .dish .content, .kit .content{
+  padding: 10px 0;
+}
+
+/*************************
+* Header
+**************************/
+header{
+  min-height: 100vh;
+  background-image: url("../imgs/hero1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.txt1, .txt2{
+  position: absolute;
+  font-size: var(--bigtxt);
+  color: var(--lytgrey);
+  font-weight: lighter;
+  top: 40%;
+  right: 30%;
+}
+
+.txt2{
+  top: 50%;
+  right: 20%;
+}
+
+nav{
+  display: flex;
+  padding: 20px 30px;
+  background: white;
+}
+
+/* .nav-items{
+  width: 70%;
+} */
+
+.logo{
+  width: 30%;
+}
+
+.nav-items a{   
+  text-decoration: none;
+  padding: 10px;
+  padding-left: 20px;
+}
+
+.nav-items{
+  /* padding: 10px; */
+  padding-top: 15px;
+}
+
+
+
+/*************************
+* main
+**************************/
+main{
+  padding: 45px;
+}
+
+
+/*************************
+* Top categories
+**************************/
+
+
+.cat-container{
+  /* width: 90%; */
+  /* margin: auto; */
+  display: flex;
+  overflow-x: auto;
+}
+
+
+.cat{
+  width: 172px;
+  margin: 15px;
+  /* display: inline-block; */
+}
+
+.cat img{
+  width: 100%;
+  height: 132px;
+  border-radius: 10px;
+}
+
+.more{
+  float: right;
+  font-size: .5em !important;
+}
+
+.more a, .kit-more a{
+  color: var(--wine-red);
+  text-decoration: none;
+}
+
+
+/*************************
+* New dishes
+**************************/
+
+.new-dishes hr{
+  width: 20%;
+  margin: auto;
+}
+
+.dish-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dish{
+  width: 25%;
+  margin: 25px 15px 10px;
+}
+
+.dish img{
+  width: 100%;
+  height: 224px;
+  border-radius: 15px 50px 30px 5px;
+}
+
+.dish-banner{
+  width: 100%;
+  height: 360px;
+  border-radius: 15px 50px;
+}
+
+.dish h3{
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.dish .content p{
+  margin-top: 5px;
+  margin-bottom: 0;
+  color: #666;
+}
+
+.item-link{
+  text-decoration: none;
+  color: initial;
+}
+
+.item-link:hover{
+  color: var(--wine-red);
+}
+
+/*************************
+* Chef
+**************************/
+.chef{
+  min-height: 70vh;
+  background-image: url("../imgs/chef.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.chef-txt:nth-child(1){
+  top: 25%;
+  right: 45%;
+  font-size: var(--bigtxt);
+}
+
+.chef-txt:nth-child(2){
+  top: 35%;
+  right: 5%;
+  font-size: var(--bigtxt);
+}
+
+
+
+/*************************
+* Kitchens
+**************************/
+/* .kitchen h1{
+  font-size: 60.01px;
+} */
+
+.kit-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kit{
+  width: 25%;
+  margin: 25px 15px 0;
+}
+
+.kit img{
+  width: 100%;
+  height: 224px;
+  border-radius: 10px;
+}
+
+.btn-orange{
+  background-color: var(--wine-red) !important;
+  color: white !important;
+}
+
+.btn-orange:hover{
+  background-color: var(--orange) !important;
+}
+
+
+
+/*************************
+* footer
+**************************/
+footer{
+  min-height: 200px;
+  background: #c4c4c4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+}
+
+/*************************
+* Utility classes n misc.
+**************************/
+.star{
+  color: #ffcc00;
+  font-size: 1.4em;
+}
+
+/* .menu-btn{
+  display: none;
+  font-size: 1.3em;
+} */
+
+.menu-btn{
+  display: none;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+}
+
+.menu-btn:hover{
+  background-color: var(--wine-red);
+}
+
+.txt-left{
+  text-align: left;
+}
+
+.txt-right{
+  text-align: right;
+}
+.txt-ctr{
+  text-align: center;
+}
+
+.txt-whyte{
+  color: white;
+}
+
+.txt-black{
+  color: black;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.mar-down{
+  margin-bottom: 15px;
+}
+
+
+.active{
+  color: var(--orange);
+}
+
+
+/*************************
+* media screen
+**************************/
+@media screen and (max-width: 680px) {
+
+  .menu-btn{
+      display: block;
+  }
+
+  .txt1, .txt2{
+      font-size: 2.5em;
+      right: 25%;
+  }
+
+  .txt2{
+      top: 46%;
+      right: 7%;
+  }
+
+  .nav-items a{
+      display: none;
+  }
+
+
+  .cat{
+      width: 300px;
+      margin: 7px;
+  }
+
+  .dish{
+      width: 35%;
+  }
+
+  .chef{
+      min-height: 30vh;
+      font-size: .6em;
+  }
+  
+  .chef-txt:nth-child(2){
+      top: 40%;
+      right: 0;
+      width: 60%;
+  }
+
+  .kit{
+      width: 35%;
+  }
+
+  main{
+    padding: 20px;
+  }
+
+}

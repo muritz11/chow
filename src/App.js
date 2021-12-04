@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import './css/App.css';
+import Home from "./pages/Homepage";
+import Dish from "./pages/Dish";
+import KitchensPage from "./pages/kitchens";
+import KitchenProfile from "./pages/KitchenProfile";
+import Nav from "./components/mini/Navbar";
+import "./css/font-awesome-4.7.0/css/font-awesome.css";
+import './css/bootstrap-main/dist/css/bootstrap.css';
+import Footer from "./components/mini/Footer";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Nav />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route path='/dish'>
+            <Dish />
+          </Route>
+          <Route exact path='/kitchens'>
+            <KitchensPage />
+          </Route>
+          <Route path='/kitchen-profile'>
+            <KitchenProfile />
+          </Route>
+        </Switch>
+      </Router>
+      <Footer />
     </div>
   );
 }
