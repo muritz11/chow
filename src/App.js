@@ -15,18 +15,11 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/dish'>
-            <Dish />
-          </Route>
-          <Route exact path='/kitchens'>
-            <KitchensPage />
-          </Route>
-          <Route path='/kitchen-profile'>
-            <KitchenProfile />
-          </Route>
+          <Route exact path='/' component={Home} />
+          <Route path='/dish/:dishId' component={Dish} />
+          <Route exact path='/kitchens' component={KitchensPage} />
+          <Route path='/kitchen-profile/:kitchenId' component={KitchenProfile} />
+          <Route>404 Not Found</Route>
         </Switch>
       </Router>
       <Footer />
