@@ -7,7 +7,6 @@ import { Link } from "react-router-dom"
 export default function DishListing() {
 
     const dishes = useSelector((state) => state.allDishes.dishes)
-    console.log(dishes)
     
     const renderList = dishes.map((dishes) => {
         

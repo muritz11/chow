@@ -2,27 +2,24 @@ import hero2 from "../imgs/hero2.jpg";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { selectedDishReducer } from "../redux/reducers/dishReducer";
+import { selectedDish } from "../redux/actions/dishActions";
+import RelatedDishes from "../components/mini/RelatedDishes";
 
 export default function Dish() {
 
     const { dishId } = useParams()
     const dispatch = useDispatch()
     const dishes = useSelector((state) => state.allDishes.dishes)
-    const dish = useSelector((state) => state.dish)
     
-    const dishObj = dishes.filter((value) => {
-        return value.id == dishId
+    const actualDish = dishes.filter((value) => {
+        return value.id === Number(dishId)
     })
     
-    console.log(dishObj)
-
+    const { title, kitchen, kitId, rating, description, price } = actualDish[0]
 
     useEffect(() => {
-        dispatch(selectedDishReducer([dishId]))
+        dispatch(selectedDish(dishId))
     }, [dishId])
-
-
 
     return (
         <div className="m-3">
@@ -31,20 +28,11 @@ export default function Dish() {
                     <img src={hero2} className="dish-banner" />
                 </div>
                 <div className="col-md-8 mt-4 mt-md-0">
-                    {/* food title */}
-                    <h1>Fried rice</h1>
-                    {/* vendor */}
-                    <p>Elly's cuisine</p>
-                    {/* rating */}
-                    <span><span class="star">&#9733;</span> 4.8</span>
-                    {/* description */}
-                    <p className="mt-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, amet nemo dolorem natus incidunt est in quam voluptate sunt dicta repellendus illum, cupiditate quas, delectus expedita eveniet quia saepe ullam.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, amet nemo dolorem natus incidunt est in quam voluptate sunt dicta repellendus illum, cupiditate quas, delectus expedita eveniet quia saepe ullam. <br />
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, amet nemo dolorem natus incidunt est in quam voluptate sunt dicta repellendus illum, cupiditate quas, delectus expedita eveniet quia saepe ullam.
-                    </p>
-                    {/* price */}
-                    <h5 className="price"><b>NGN1300</b></h5>
+                    <h1>{title}</h1>
+                    <p><Link to={`/kitchen-profile/${kitId}`}>{kitchen}</Link></p>
+                    <span><span class="star">&#9733;</span> {rating}</span>
+                    <p className="mt-2">{description}</p>
+                    <h5 className="price"><b>{price}</b></h5>
                     {/* serving and add to cart */}
                     <div className="row mt-3">
                         <div className="col-6">
@@ -65,48 +53,7 @@ export default function Dish() {
             </div>
 
             {/* related */}
-            <section className="mt-5">
-                <h2 className="mt-4">Related dishes</h2>
-
-                <div className="dish-container">
-                    <Link to="/dish" class="dish item-link">
-                        <img src={hero2} alt="category" />
-                        <div class="content">
-                            <h3>Nsala</h3>
-                            <p>Susy's delight</p>
-                            <span><span class="star">&#9733;</span> 4.8</span>
-                        </div>
-                    </Link>
-
-                    <Link to="/dish" class="dish item-link">
-                        <img src={hero2} alt="category" />
-                        <div class="content">
-                            <h3>Nsala</h3>
-                            <p>Susy's delight</p>
-                            <span><span class="star">&#9733;</span> 4.8</span>
-                        </div>
-                    </Link>
-
-                    <Link to="/dish" class="dish item-link">
-                        <img src={hero2} alt="category" />
-                        <div class="content">
-                            <h3>Nsala</h3>
-                            <p>Susy's delight</p>
-                            <span><span class="star">&#9733;</span> 4.8</span>
-                        </div>
-                    </Link>
-
-                    <Link to="/dish" class="dish item-link">
-                        <img src={hero2} alt="category" />
-                        <div class="content">
-                            <h3>Nsala</h3>
-                            <p>Susy's delight</p>
-                            <span><span class="star">&#9733;</span> 4.8</span>
-                        </div>
-                    </Link>
-                
-                </div>    
-            </section>
+            <RelatedDishes />
 
         </div>
     )

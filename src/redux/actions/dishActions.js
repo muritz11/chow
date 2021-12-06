@@ -7,9 +7,9 @@ export const setDishes = (dishes) => {
     }
 }
 
-export const selectedDish = (dish) => {
+export const selectedDish = (dishId) => {
     return {
         type: actionTypes.SELECTED_DISH,
-        payload: dish
+        payload: dishId
     }
 }
