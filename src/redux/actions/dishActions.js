@@ -1,15 +1,15 @@
-import { actionTypes } from "../constants/action-types";
+import { dishActionTypes } from "../constants/dish-action-types";
 
 export const setDishes = (dishes) => {
     return {
-        type: actionTypes.SET_DISHES,
+        type: dishActionTypes.SET_DISHES,
         payload: dishes
     }
 }
 
 export const selectedDish = (dishId) => {
     return {
-        type: actionTypes.SELECTED_DISH,
+        type: dishActionTypes.SELECTED_DISH,
         payload: dishId
     }
 }

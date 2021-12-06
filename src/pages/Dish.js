@@ -14,6 +14,7 @@ export default function Dish() {
     const actualDish = dishes.filter((value) => {
         return value.id === Number(dishId)
     })
+    console.log(dishId)
     
     const { title, kitchen, kitId, rating, description, price } = actualDish[0]
 

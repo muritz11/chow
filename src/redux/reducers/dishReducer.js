@@ -1,4 +1,4 @@
-import { actionTypes } from "../constants/action-types";
+import { dishActionTypes } from "../constants/dish-action-types";
 
 const initialState = {
     dishes: [
@@ -65,10 +65,9 @@ const initialState = {
     ]
 }
 
-//not that we'll need to use setDishes since we're not yet fetching any API
 export const dishReducer = (state = initialState, {type, payload}) => {
     switch (type) {
-        case actionTypes.SET_DISHES:
+        case dishActionTypes.SET_DISHES:
             return {...state, dishes: payload};
     
         default:
@@ -78,7 +77,7 @@ export const dishReducer = (state = initialState, {type, payload}) => {
 
 export const selectedDishReducer = (state={}, {type, payload}) => {
     switch (type) {
-        case actionTypes.SELECTED_DISH:
+        case dishActionTypes.SELECTED_DISH:
             return {...state, payload}
     
         default:
