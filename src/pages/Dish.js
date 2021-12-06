@@ -1,7 +1,29 @@
 import hero2 from "../imgs/hero2.jpg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { selectedDishReducer } from "../redux/reducers/dishReducer";
 
 export default function Dish() {
+
+    const { dishId } = useParams()
+    const dispatch = useDispatch()
+    const dishes = useSelector((state) => state.allDishes.dishes)
+    const dish = useSelector((state) => state.dish)
+    
+    const dishObj = dishes.filter((value) => {
+        return value.id == dishId
+    })
+    
+    console.log(dishObj)
+
+
+    useEffect(() => {
+        dispatch(selectedDishReducer([dishId]))
+    }, [dishId])
+
+
+
     return (
         <div className="m-3">
             <div className="row mt-4">
