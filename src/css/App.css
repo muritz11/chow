@@ -92,14 +92,14 @@ header{
   right: 20%;
 }
 
-nav{
+/* nav{
   display: flex;
   padding: 20px 30px;
   background: white;
 }
 
-/* .nav-items{
-  width: 70%;
+.nav-items{
+  width: 50%;
 } */
 
 .logo{
@@ -113,7 +113,6 @@ nav{
 }
 
 .nav-items{
-  /* padding: 10px; */
   padding-top: 15px;
 }
 
