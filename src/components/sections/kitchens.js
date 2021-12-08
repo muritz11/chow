@@ -1,4 +1,4 @@
-import hero2 from "../../imgs/hero2.jpg";
+// import hero2 from "../../imgs/hero2.jpg";
 import { Link } from "react-router-dom";
 import KitchenListing from "../mini/KitchenListing";
 

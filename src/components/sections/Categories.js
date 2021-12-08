@@ -5,7 +5,7 @@ export default function Categories() {
         <section class="categories">
                 <h1>
                     Top categories
-                    <span class="more"><a href="#">See more</a></span>
+                    <span class="more"><a href="/">See more</a></span>
                 </h1>
                 <div class="cat-container">
                     <div class="cat">

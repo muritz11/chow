@@ -20,13 +20,13 @@ export default function Dish() {
 
     useEffect(() => {
         dispatch(selectedDish(dishId))
-    }, [dishId])
+    }, [dishId, dispatch])
 
     return (
         <div className="m-3">
             <div className="row mt-4">
                 <div className="col-md-4">
-                    <img src={hero2} className="dish-banner" />
+                    <img src={hero2} className="dish-banner" alt="" />
                 </div>
                 <div className="col-md-8 mt-4 mt-md-0">
                     <h1>{title}</h1>

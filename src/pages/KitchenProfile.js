@@ -1,5 +1,5 @@
 import hero2 from "../imgs/hero2.jpg";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { selectedKitchen } from "../redux/actions/kitchenActions";
@@ -20,13 +20,13 @@ export default function KitchenProfile() {
 
     useEffect(() => {
         dispatch(selectedKitchen(kitId))
-    }, [kitId])
+    }, [kitId, dispatch])
 
     return (
         <div className="m-3">
             <div className="row mt-4">
                 <div className="col-md-4">
-                    <img src={hero2} className="dish-banner" />
+                    <img src={hero2} className="dish-banner" alt="" />
                 </div>
                 <div className="col-md-8 mt-4 mt-md-0">
                     <h1>{name}</h1>
